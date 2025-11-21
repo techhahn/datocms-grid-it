@@ -8,23 +8,23 @@ connect({
   renderConfigScreen(ctx) {
     return render(<ConfigScreen ctx={ctx} />);
   },
-  manualFieldExtensions(ctx) {
+  manualFieldExtensions() {
     return [
       {
         id: "gridIt",
         name: "Grid Layout",
         type: "editor",
-			fieldTypes: ["json"],
+        fieldTypes: ["json"],
       },
     ];
   },
 
-  overrideFieldExtensions(field: Field, ctx) {
-	if (field.attributes.field_type === "json" && field.id === "gridIt") {
-		return {
-			editor: { id: "gridIt" },
-		}
-	}
+  overrideFieldExtensions(field: Field) {
+    if (field.attributes.field_type === "json" && field.id === "gridIt") {
+      return {
+        editor: { id: "gridIt" },
+      };
+    }
   },
   renderFieldExtension(fieldExtensionId: string, ctx) {
     switch (fieldExtensionId) {
