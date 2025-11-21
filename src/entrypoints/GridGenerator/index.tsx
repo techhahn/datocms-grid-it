@@ -13,7 +13,7 @@ type Props = Readonly<{
 }>;
 
 function GridItGenerator({ ctx }: Props) {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   const stringifiedValues = get(
     ctx?.formValues,
@@ -34,7 +34,7 @@ function GridItGenerator({ ctx }: Props) {
   return (
     <Canvas ctx={ctx}>
       <Section
-        title="Column Settings"
+        title="Grid Settings"
         titleStyle={{ fontSize: "var(--font-size-l)" }}
         collapsible={{
           isOpen: !isCollapsed,

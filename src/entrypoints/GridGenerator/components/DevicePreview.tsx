@@ -20,7 +20,7 @@ export function DevicePreview({
       <div
         className="device"
         style={{
-          height: 20,
+          minHeight: 40,
           width,
           display: "grid",
           gridTemplateColumns: "repeat(12, minmax(0, 1fr))",
@@ -35,7 +35,9 @@ export function DevicePreview({
             <div
               key={col.itemId + offset}
               className={`col ${
-                index === parseInt(currentColumnIndex || "0") ? "col-active" : ""
+                index === parseInt(currentColumnIndex || "0")
+                  ? "col-active"
+                  : ""
               }`}
               style={{
                 gridColumn: `span ${colspan} / span ${colspan}`,

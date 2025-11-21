@@ -47,6 +47,7 @@ export function InputField({ config, screenSize, onChange }: InputFieldProps) {
       <Dropdown
         renderTrigger={({ open, onClick }) => (
           <Button
+            style={{ marginTop: "5px" }}
             buttonSize="xxs"
             onClick={onClick}
             rightIcon={open ? <CaretUpIcon /> : <CaretDownIcon />}
@@ -62,7 +63,7 @@ export function InputField({ config, screenSize, onChange }: InputFieldProps) {
               onClick={() => handleOffsetChange(index)}
               active={config.offset === (index + 1).toString()}
             >
-              {index ? `By ${index + 1}` : "Default"}
+              {index ? `grid ${index + 1}` : "Default"}
             </DropdownOption>
           ))}
         </DropdownMenu>
